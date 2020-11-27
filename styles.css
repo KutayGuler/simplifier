@@ -1,0 +1,126 @@
+:root {
+    --yt-light-grey: rgb(79, 79, 79);
+    --yt-grey: rgb(32, 32, 32);
+    --yt-dark-grey: rgb(24, 24, 24);
+    --yt-white: rgb(237,237,237);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.yt-icon {
+    width: 3rem;
+    height: 3rem;
+    margin-top: 1.2rem;
+    fill: rgb(255, 0, 0);
+    display: block;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(32, 32, 32);
+}
+
+.title {
+    background-color: var(--yt-grey);
+    color: var(--yt-white);
+    font-family: 'Roboto';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.youtube-logo {
+    height: 45px;
+}
+
+body{
+    background-color: var(--yt-dark-grey);
+}
+
+.sections-header{
+    list-style-type: none;
+    color: var(--yt-white);
+    font-family: 'Roboto';
+}
+
+.sections-header{
+    text-align: center;
+    justify-content: center;
+}
+
+.sections-container {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 225px;
+    background-color: var(--yt-grey);
+}
+
+.flex-container {
+    background-color: var(--yt-dark-grey);
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+.sections-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn, .select-all {
+    background-color: rgb(32, 32, 32);
+    padding: 10px 20px;
+    color: rgb(237,237,237);
+    font-family: "roboto";
+    border: 1px solid rgb(32, 32, 32);
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: start;
+    flex: 1;
+    outline: none;
+}
+
+button:hover{
+    background-color: rgb(79, 79, 79);
+}
+
+input[type="checkbox"][readonly] {
+    pointer-events: none;
+}
+
+.checkbox
+{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.icon
+{
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: rgb(144, 144, 144);
+    display: block;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+hr {
+    width: 50%;
+}
+
+
+
