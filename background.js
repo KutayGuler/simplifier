@@ -1,5 +1,6 @@
-let optionsIsOpen = false; 
-let extensionUrl = 'chrome-extension://cgecigbfjdbfehebjkmokgknnbfcapoh/options.html'
+let optionsIsOpen = false;
+let id = chrome.runtime.id; 
+let extensionUrl = 'chrome-extension://' + id + '/options.html'
 
 chrome.tabs.onUpdated.addListener(function (tabId, object, tab) {
     chrome.tabs.query({url: "*://www.youtube.com/*"}, function (tabs) {

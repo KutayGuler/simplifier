@@ -4,8 +4,9 @@
     "description": "Simplify your Facebook, YouTube and Spotify experience.",
     "manifest_version": 2,
     "options_page": "options.html",
+    "content_security_policy": "script-src 'self' https://www.gstatic.com; object-src 'self'",
     "permissions": [
-        "tabs", "activeTab", "storage", "declarativeContent", "*://*.youtube.com/*", "webNavigation"
+        "tabs", "activeTab", "storage", "declarativeContent", "*://*.youtube.com/*", "webNavigation", "identity"
       ],
     "content_scripts": [
         {
@@ -19,5 +20,5 @@
     },
     "browser_action": {
         "default_popup": "options.html"
-      }
+    }
 }

@@ -1,23 +1,26 @@
 let arr = new Array();
 let buttons = document.getElementsByClassName('btn');
-// let selectAllButton = document.getElementById('select-all');
+let selectAllButton = document.getElementById('select-all');
+let selectAllText = document.getElementById('select-all-text');
+let selectAllCheckbox = selectAllButton.firstElementChild;
+
+selectAllButton.onclick = onClick;
 
 document.addEventListener('DOMContentLoaded', restore_options);
 Array.from(buttons).forEach(function(button) {button.addEventListener('click', save_options);});
 
-// selectAllButton.onclick = function () {
-//     let checkbox = selectAllButton.firstElementChild;
-//     checkbox.checked = !checkbox.checked;
+function onClick() {
+    selectAllCheckbox.checked = !selectAllCheckbox.checked;
 
-//     if (checkbox.checked) {
-//         selectAllButtons();
-//         selectAllButton.innerHTML = selectAllButton.innerHTML.replace('Select','Unselect');
-//     } else {
-//         unselectAllButtons();
-//         selectAllButton.innerHTML = selectAllButton.innerHTML.replace('Unselect','Select');
-//     }
-//     save_options();
-// }
+    if (selectAllCheckbox.checked) {
+        selectAllButtons();
+        selectAllText.innerHTML = 'Unselect all';
+    } else {
+        unselectAllButtons();
+        selectAllText.innerHTML = 'Select all';
+    }
+    save_options();
+}
 
 function selectAllButtons() {
     for (let button of buttons) {
@@ -48,6 +51,13 @@ function toggleButton() {
         arr = arr.filter(value => value != checkbox.value);
     } else if (!checkbox.checked) {
         arr.push(checkbox.value);
+    }
+
+    if (arr.isEmpty) {
+        selectAllCheckbox.checked = true;
+    } else {
+        selectAllCheckbox.checked = false;
+        selectAllText.innerHTML = 'Select all'
     }
 }
 
